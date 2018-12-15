@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WEB II</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/libraries/materialize/css/materialize.css">
+    <link rel="stylesheet" href="assets/resources/styles/style.css">
+
+    <script src="assets/libraries/jquery/jquery-2.2.4.min.js"></script>
+    <script src="assets/libraries/materialize/js/materialize.js"></script>
+    <script src="assets/resources/scripts/common.js"></script>
+
+
+    <script>
+        $(function() {
+            $("#footer").load("footer.html");
+            $("#menu").load("menu.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <!-- container -->
+    <div class="container about">
+        <h5>Pizzaria Senado</h5>
+        <h6>Aqui tudo acaba em pizza!</h6>
+        <hr>
+        <!-- linha -->
+        <div class="row">
+            <div class="col s12 center">
+                <img src="assets/resources/images/pizzaria-senado.png" height="200px" />
+            </div>
+            <div class="col s12 flow-text my-panel-content">
+                <p>Considere que você foi contratado para criar um pequeno sistema com formulário para a realização de pedidos para a Pizzaria Senado, onde tudo acaba em pizza. O formulário deve possuir as seguintes entradas: tamanho da pizza (pequena, média e grande), sabor, preço, opção de borda recheada, opção de entrega em casa ou balcão. Vale considerar que a quantidade de sabor por pizza segue a seguinte relação:
+                </p>
+                <ul class="browser-default">
+                    <li>Pizza Pequena: 1 sabor - R$ 15,00</li>
+                    <li>Pizza Média: 2 sabores - R$ 20,00</li>
+                    <li>Pizza Grande: 3 sabores - R$ 25,00</li>
+                </ul>
+                <p> Ainda, o formulário também deve registrar os seguintes dados do cliente: nome, telefone e endereço. O campo de endereço apenas deve ser apresentado no formulário se a opção entrega for marcada. Quando o funcionário clicar no botão enviar, os dados precisam ser armazenados no WebStorage. Ademais, a qualquer momento, o funcionário poderá visualizar a página relatório com a lista de pedidos do dia, ou seja, os pedidos armazenados no WebStorage.
+                </p>
+                <p class="my-subtitle">Exigências</p>
+                <ul class="browser-default">
+                    <li>O pedido de uma pizza deve ser representado por um objeto pizza.</li>
+                    <li>O cliente precisa ser representado por um objeto cliente, sendo que o objeto pizza deve ter referência ao objeto cliente.</li>
+                    <li>Os pedidos de pizza precisam ser armazenados em um vetor chamado pedidos.</li>
+                    <li>O vetor pedidos precisa ser armazenado no WebStorage.</li>
+                    <li>A página relatório deve listar todos os pedidos de pizza armazenados no WebStorage em uma lista ou tabela, devendo apresentar os seguintes dados por pizza: tamanho, sabores e nome do cliente.</li>
+                </ul>
+            </div>
+            <hr>
+            <form action="" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="tamanho-pizza" class="browser-default" required>
+							<option value="" disabled selected>Escolha uma opção</option>
+							<option value="1">Pequena</option>
+							<option value="2">Média</option>
+							<option value="3">Grande</option>
+						</select>
+                        <label for="tamanho-pizza">Tamanho</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m9">
+                        <input id="sabor-cliente" type="text" class="validate">
+                        <label for="sabor-pizza">Sabor</label>
+                    </div>
+                    <div class="input-field col s12 m3">
+                        <button id="botao-adiciona-sabor" class="btn waves-effect waves-light" type="button">Adicionar</button>
+                    </div>
+
+                </div>
+                <p>
+                    <input type="checkbox" id="borda-pizza" />
+                    <label for="borda-pizza">Borda Recheada?</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="entrega-pizza" />
+                    <label for="entrega-pizza">Entregar em casa?</label>
+                </p>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="nome-cliente" type="text" class="validate" required>
+                        <label for="nome-cliente">Nome do cliente</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="telefone-cliente" type="text" class="validate" required>
+                        <label for="telefone-cliente">Telefone do cliente</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="endereco-cliente" type="text" class="validate" disabled>
+                        <label for="endereco-cliente">Endereço do cliente</label>
+                    </div>
+                </div>
+                <button id="botao-envia-pedido" class="btn waves-effect waves-light" type="button">Enviar
+				</button>
+                <a class="btn waves-effect waves-light" href="questao-2-relatorio.html">Relatório
+				</a>
+            </form>
+        </div>
+        <!-- fim linha -->
+    </div>
+    <!-- fim container -->
+
+    <!-- rodape-->
+    <div id="footer"></div>
+    <!-- rodapé -->
+
+    <script src="assets/resources/scripts/question-2.js"></script>
+</body>
+
+</html>

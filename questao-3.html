@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WEB II</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/libraries/materialize/css/materialize.css">
+    <link rel="stylesheet" href="assets/resources/styles/style.css">
+
+    <script src="assets/libraries/jquery/jquery-2.2.4.min.js"></script>
+    <script src="assets/libraries/materialize/js/materialize.js"></script>
+    <script src="assets/resources/scripts/common.js"></script>
+
+
+    <script>
+        $(function() {
+            $("#footer").load("footer.html");
+            $("#menu").load("menu.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="menu"></div>
+    <!-- container -->
+    <main>
+        <div class="container about">
+            <h5>Carta Maior</h5>
+            <h6>Vence quem ficar com todas as cartas</h6>
+            <hr>
+            <!-- linha -->
+            <div class="row">
+                <div class="col s12 center">
+                    <img src="assets/resources/images/baralho.jpg" height="200px" />
+                </div>
+                <div class="col s12 flow-text my-panel-content">
+                    <p>Implemente um jogo de Carta Maior (simplificado) entre dois jogadores. O jogo funciona da seguinte maneira: são distribuídas 5 cartas aleatórias para cada jogador. A cada rodada, os dois jogadores apresentam uma carta na mesa, sendo que o jogador que apresentou a carta de maior valor fica com as duas cartas apresentadas. As cartas são todas diferentes para não haver a possibilidade de empate. As rodadas ocorrem sucessivamente até a definição do vencedor, que ocorre quando um jogador detém todas as cartas do jogo, ou seja, 10 cartas. </p>
+                    <p class="my-subtitle">
+                        Exigências
+                    </p>
+
+                    <ul class="browser-default">
+                        <li>As cartas são representadas por números de 1 a 13, devendo haver um vetor chamado baralho para guardar todas estas cartas.</li>
+                        <li>Também é preciso haver dois vetores numéricos para guardar os valores representativos das cartas dos dois jogadores.</li>
+                        <li>A distribuição das cartas aos jogadores deve ocorrer por meio do embaralhamento do vetor baralho e então atribuída sequencialmente a fim de evitar que um mesmo valor seja atribuído a ambos jogadores.</li>
+                        <li>As cartas devem ser apresentadas na página HTML a cada clique no botão Jogar. As cartas precisam ser retiradas do início dos vetores dos jogadores e inseridas no final do vetor do jogador vencedor da rodada.</li>
+                        <li>A pontuação de cada jogador também precisa ser apresentada na página, a qual basicamente corresponde ao tamanho de cada vetor.</li>
+                        <li>Finalmente, quando algum jogador totalizar 10 cartas no vetor, informar em um alert qual jogador venceu o jogo.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="col s12 m6 center">
+                    <img id="imagem-1" src="assets/resources/images/cartas/1.png" height="300px" />
+                    <div class="row">
+                        <div class="col s12 m4 offset-m4 center">
+                            <div id="pontuacao-1" class="card-panel white-text green darken-2 flow-text">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 center">
+                    <img id="imagem-2" src="assets/resources/images/cartas/13.png" height="300px" />
+                    <div class="row">
+                        <div class="col s12 m4 offset-m4 center">
+                            <div id="pontuacao-2" class="card-panel white-text green darken-2 flow-text">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 center">
+                    <button id="botao-jogar" class="btn waves-effect waves-light" type="submit">Jogar</button>
+                </div>
+
+            </div>
+            <!-- fim linha -->
+        </div>
+    </main>
+    <!-- fim container -->
+
+    <!-- rodape-->
+    <div id="footer"></div>
+    <!-- rodapé -->
+
+    <script src="assets/resources/scripts/question-3.js"></script>
+</body>
+
+</html>

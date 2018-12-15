@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WEB II</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/libraries/materialize/css/materialize.css">
+    <link rel="stylesheet" href="assets/resources/styles/style.css">
+
+    <script src="assets/libraries/jquery/jquery-2.2.4.min.js"></script>
+    <script src="assets/libraries/materialize/js/materialize.js"></script>
+    <script src="assets/resources/scripts/common.js"></script>
+
+
+    <script>
+        $(function() {
+            $("#footer").load("footer.html");
+            $("#menu").load("menu.html");
+        });
+    </script>
+</head>
+
+<style>
+    .framework-panel {
+        font-size: 2em;
+        border-style: dashed;
+    }
+
+    .framework-list {
+        border-style: dashed;
+    }
+</style>
+
+<body>
+    <div id="menu"></div>
+    <!-- container -->
+    <main>
+        <div class="container about">
+            <h5>Calculadora de Preço Médio dos Combustíveis</h5>
+            <h6>Calcule a média de preço dos combustíveis na sua região</h6>
+            <hr>
+            <!-- linha -->
+            <div class="row">
+                <div class="col s12 center">
+                    <img src="assets/resources/images/preco-combustivel.jpeg" height="200px" />
+                </div>
+                <div class="col s12 flow-text">
+                    <div class="my-panel-content">
+                        <p>Crie um script para calcular a média de preços de combustível em sua região. Para isso, você precisa criar um sistema que permita cadastrar o nome de cada posto de combustível da sua região e os preços da gasolina comum e aditivada, etanol e diesel praticado. Neste sistema, considera-se que cada posto possui todos os quatro tipos de combustíveis mencionados. Por fim, apresentar a média de preços de cada combustível em uma tabela.</p>
+                        <p class="my-subtitle">Exigências</p>
+                        <ul class="browser-default">
+                            <li>Os campos de preços de combustível precisam ser validados com <strong>Expressões
+                                    Regulares</strong> para aceitar somente o seguinte formato: R$ 0,00. Exemplos: R$ 9,99; 1,23, etc.</li>
+                            <li>Cada posto de combustível deve ser representado por um objeto criado via <strong>função
+                                    construtora</strong>. Cada objeto posto precisa ter um atributo para guardar o
+                                <strong>nome do posto </strong>e um <strong>vetor para guardar os seus combustíveis</strong>. Por sua vez, <strong>cada combustível precisa ser representado por um objeto</strong>, possuindo os <strong>atributos tipo e preço</strong>.</li>
+                            <li>Os objetos posto de combustível e seus respectivos combustíveis <strong>precisam ser
+                                    criados/instanciados</strong> ao clicar no botão “CADASTRAR” (usar evento submit).</li>
+                            <li>Os <strong>objetos que representam os postos de combustíveis</strong> precisam ser
+                                <strong>armazenados em um vetor </strong>declarado como <strong>variável global</strong>. Este vetor será usado para calcular a média de preço dos combustíveis praticados pelos postos da região.</li>
+                            <li>As médias precisam ser <strong>calculadas imediatamente</strong> ao cadastro de cada posto de combustível. Após calculadas, devem ser <strong>apresentadas imediatamente em
+                                    uma tabela</strong> para representação das médias de preços.</li>
+                            <li>Ainda, é preciso informar <strong>quantos postos já foram cadastrados</strong> a fim de melhorar o entendimento das médias representadas na tabela.</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <form id="formulario" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="nome-posto" type="text" class="validate" required>
+                            <label for="nome-posto">Nome do Posto de Combustível</label>
+                        </div>
+                    </div>
+                    <label>Preços dos Combustíveis</label>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="gasolina" type="text" class="validate" pattern="\d,\d{2}" required>
+                            <label for="gasolina">Gasolina Comum</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="gasolina-aditivada" type="text" class="validate" pattern="\d,\d{2}" required>
+                            <label for="gasolina-aditivada">Gasolina Aditivada</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="etanol" type="text" class="validate" pattern="\d,\d{2}" required>
+                            <label for="etanol">Etanol</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="diesel" type="text" class="validate" pattern="\d,\d{2}" required>
+                            <label for="diesel">Diesel</label>
+                        </div>
+                    </div>
+                    <button id="cadastra-button" class="btn blue waves-effect waves-light right" type="submit" name="action">Cadastrar
+                    </button>
+                </form>
+            </div>
+            <!-- fim linha -->
+            <!-- tabela -->
+            <h5>Média de um total de <strong><span id="quantidade-postos-span" class="red-text">0</span></strong> postos de combustível</h5>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Combustível</th>
+                        <th>Média de Preço</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Gasolina</td>
+                        <td id="gasolina-td">R$ 0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Gasolina Aditivada</td>
+                        <td id="aditivada-td">R$ 0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Etanol</td>
+                        <td id="etanol-td">R$ 0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Diesel</td>
+                        <td id="diesel-td">R$ 0,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- fim tabela-->
+
+        </div>
+    </main>
+    <!-- fim container -->
+    <div id="footer"></div>
+    <script src="assets/resources/scripts/question-4.js"></script>
+</body>
+
+</html>

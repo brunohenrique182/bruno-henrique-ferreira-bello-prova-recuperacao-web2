@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WEB II</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/libraries/materialize/css/materialize.css">
+    <link rel="stylesheet" href="assets/resources/styles/style.css">
+
+    <script src="assets/libraries/jquery/jquery-2.2.4.min.js"></script>
+    <script src="assets/libraries/materialize/js/materialize.js"></script>
+    <script src="assets/resources/scripts/common.js"></script>
+
+    <script>
+        $(function() {
+            $("#footer").load("footer.html");
+            $("#menu").load("menu.html");
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <!-- container -->
+    <main>
+        <div class="container about">
+            <h5>Show do Sérgio Reis</h5>
+            <h6>Tocando em Frente</h6>
+            <hr>
+            <!-- linha -->
+            <div class="row">
+                <div class="col s12 center">
+                    <img src="assets/resources/images/sergio-reis-show.jpg" height="200px" />
+                </div>
+                <div class="col s12 flow-text my-panel-content">
+                    <p>Crie um sistema para uma suposta compra de ingressos para o show de Sérgio Reis em Guarapuava. No evento de carregamento da página, apresentar um diálogo perguntando se o usuário possui um código promocional para o evento. Se possuir, apresentar outro diálogo para que ele possa inserir este código. A página HTML basicamente possui um formulário com dois campos de entrada, um para o nome do comprador e outro para a quantidade de ingressos desejados. A página também deve apresentar o código promocional (se houver) não editável e o total a ser pago pela quantidade de ingressos, o qual é calculado pelo evento de clique em um botão. Cada ingresso custa R$ 100,00 e há um desconto de 10% neste valor para quem tem o código promocional válido. O código promocional válido é único e consiste no texto "SRGP".</p>
+                    <p class="my-subtitle">
+                        Exigências
+                    </p>
+                    <ul class="browser-default">
+                        <li>O evento de blur no campo nome deve ser usado para validar o nome. Apenas pode conter caracteres. Caso seja inválido, apresentar a mensagem em um alert.</li>
+                        <li>O evento de blur no campo quantidade deve ser usado para validar se a quantidade realmente é um número. Caso seja inválido, apresentar a mensagem em um alert.</li>
+                        <li>O total deve ser calculado pelo evento de clique no botão "Calcular Total", considerando a existência de um código promocional válido.</li>
+                        <li>Ao clicar no botão "Comprar", validar novamente os campos de entrada por meio do evento onsubmit. Mostrar um alerta de sucesso ou falha.</li>
+                    </ul>
+
+                </div>
+                <hr>
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="nome-completo-show" type="text" class="validate">
+                            <label for="nome-completo-show">Nome Completo</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="quantidade-show" type="number" class="validate">
+                            <label for="quantidade-show">Quantidade</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="codigo-promo" type="text" class="validate" disabled>
+                            <label for="codigo-promo">Código Promocional</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="total-pagar-show" type="text" class="validate">
+                            <label for="total-pagar-show" class="active">Total à Pagar</label>
+                        </div>
+                    </div>
+                    <button id="compra-ingressos-show" class="btn waves-effect waves-light" type="submit" name="action">Comprar
+					</button>
+                    <button id="calcula-total-show" class="btn waves-effect waves-light" type="button" name="action">Calcular Total
+					</button>
+                </form>
+            </div>
+            <!-- fim linha -->
+        </div>
+    </main>
+    <!-- fim container -->
+
+    <!-- rodape-->
+    <div id="footer"></div>
+    <!-- rodapé -->
+    <script src="assets/resources/scripts/question-1.js"></script>
+</body>
+
+</html>
